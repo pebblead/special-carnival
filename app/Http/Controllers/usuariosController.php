@@ -18,6 +18,12 @@ class usuariosController extends Controller
 
 		//guardar en bd
 		$nuevo=new usuarios;
-    	dd($nombre);
+		$nuevo->nombre=$nombre;
+    	$nuevo->edad=$edad;
+    	$nuevo->sexo=$sexo;
+    	$nuevo->correo=$correo;
+    	$nuevo->save();
+
+    	return Redirect('/registrarUsuarios');
     }
 }
